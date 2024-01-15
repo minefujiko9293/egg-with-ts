@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": "eslint-config-egg/typescript",
+  "rules": {
+    "@typescript-eslint/no-unused-vars": 1,
+
+    "no-useless-catch": 0,
+    "no-empty": 1,
+    "spaced-comment": 1,
+    "arrow-parens": [1, "always"],
+    "prefer-const": 1,
+    "array-bracket-spacing": 0
+  }
+}
