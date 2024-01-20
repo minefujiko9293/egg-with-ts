@@ -1,13 +1,13 @@
-import { Application } from 'egg';
+import { Application, IBoot } from 'egg';
 
-export default class AppBoot {
+export default class Boot implements IBoot {
   app: Application;
 
   constructor(app: Application) {
     this.app = app;
   }
 
-  async didLoad() {
+  async didReady() {
     // TODO: something...
   }
 }
