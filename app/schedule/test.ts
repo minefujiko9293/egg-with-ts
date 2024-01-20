@@ -1,7 +1,7 @@
+import { EggSchedule } from 'egg';
 import moment from 'moment';
-import { EggSchedule } from '../../egg';
 
-export default (app => {
+export default ((app) => {
   return {
     schedule: {
       interval: '2s',

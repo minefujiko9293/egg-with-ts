@@ -1,5 +1,7 @@
-import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import { EggAppConfig, EggAppConfigCustom, EggAppInfo, PowerPartial } from 'egg';
 import path from 'path';
+import { devSourceConfig } from './source/dev';
+import { prodSourceConfig } from './source/prod';
 
 export default (appInfo: EggAppInfo) => {
   const config: PowerPartial<EggAppConfig> = {
@@ -15,16 +17,10 @@ export default (appInfo: EggAppInfo) => {
     cors: { origin: '*' },
   };
 
-  const myConfig = {
-    my1: {
-      pageSize: 30,
-      serverUrl: 'https://hacker-news.firebaseio.com/v0',
-    },
-    my2: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
+  const custom: PowerPartial<EggAppConfigCustom> = {
+    _dev_: true,
   };
+  Object.assign(custom, custom._dev_ ?? true ? devSourceConfig : prodSourceConfig);
 
-  return {
-    ...(config as {}),
-    ...myConfig,
-  };
+  return { ...config, ...custom };
 };
