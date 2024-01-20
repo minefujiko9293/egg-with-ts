@@ -1,7 +1,7 @@
 import { EggAppConfig, EggAppConfigCustom, EggAppInfo, PowerPartial } from 'egg';
 import path from 'path';
-import { devSourceConfig } from './source/dev';
-import { prodSourceConfig } from './source/prod';
+import { config as devSourceConfig } from './source/dev';
+import { config as prodSourceConfig } from './source/prod';
 
 export default (appInfo: EggAppInfo) => {
   const config: PowerPartial<EggAppConfig> = {

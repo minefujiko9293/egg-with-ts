@@ -7,8 +7,6 @@ export default class HomeController extends Controller {
   }
 
   public async test_route() {
-    console.warn('🚀 ~ HomeController ~ test_route:', this.ctx.url);
-
     const { fun } = this.ctx.params;
     if (!fun) throw new Error('fun param missing!');
     if (!this[fun]) throw new MyError('notfound', 404);
@@ -52,7 +50,7 @@ export default class HomeController extends Controller {
   _convertToTree(dept_list: string[]) {
     const result: any[] = [];
 
-    dept_list.forEach(path => {
+    dept_list.forEach((path) => {
       // 将路径按"/"分割成部门数组
       const departments = path.split('/');
       let currentNode = result;
@@ -63,7 +61,7 @@ export default class HomeController extends Controller {
         fullPath += (index > 0 ? '/' : '') + department;
 
         // 检查当前部门节点是否已存在
-        const existingNode = currentNode.find(node => node.name === department);
+        const existingNode = currentNode.find((node) => node.name === department);
 
         if (existingNode) {
           // 如果节点已存在，移动当前节点指针到该节点的子节点数组
@@ -110,5 +108,11 @@ export default class HomeController extends Controller {
 
   public async test3() {
     throw new MyError('test3 notfound', 404);
+  }
+
+  public async test4() {
+    this.app.redis.set('test4', 10086);
+
+    return this.app.redis.get('test4');
   }
 }

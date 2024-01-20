@@ -1,3 +1,13 @@
 import { EggAppConfig, PowerPartial } from 'egg';
 
-export const devSourceConfig: PowerPartial<EggAppConfig> = {};
+export const config: PowerPartial<EggAppConfig> = {
+  redis: {
+    client: {
+      db: 0,
+      port: 6379,
+      host: '127.0.0.1',
+      password: '',
+      keyPrefix: 'egg-with-ts',
+    },
+  },
+};

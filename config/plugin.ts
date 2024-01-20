@@ -7,4 +7,8 @@ export default {
     enable: true,
     package: 'egg-cors',
   },
+  redis: {
+    enable: true,
+    package: 'egg-redis',
+  },
 };
