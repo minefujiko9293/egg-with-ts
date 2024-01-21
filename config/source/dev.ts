@@ -2,6 +2,7 @@ import { EggAppConfig, PowerPartial } from 'egg';
 
 export const config: PowerPartial<EggAppConfig> = {
   redis: {
+    agent: true,
     client: {
       db: 0,
       port: 6379,

@@ -1,4 +1,5 @@
 import { Controller } from 'egg';
+import { queue_name } from '../glues/bullmq/queue/sync';
 import { MyError } from '../middleware/response';
 
 export default class HomeController extends Controller {
@@ -114,5 +115,12 @@ export default class HomeController extends Controller {
     this.app.redis.set('test4', 10086);
 
     return this.app.redis.get('test4');
+  }
+
+  public async test5() {
+    const { queue } = this.app.bullmq[queue_name];
+    const job = await queue.add(queue_name, { foo: 'bar' });
+
+    return job.id;
   }
 }

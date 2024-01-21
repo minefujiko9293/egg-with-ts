@@ -1,9 +1,9 @@
-import { Application, IBoot } from 'egg';
+import { Agent, IBoot } from 'egg';
 
 export default class Boot implements IBoot {
-  app: Application;
+  app: Agent;
 
-  constructor(app: Application) {
+  constructor(app: Agent) {
     this.app = app;
   }
 

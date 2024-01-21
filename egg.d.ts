@@ -1,4 +1,6 @@
+import * as bullmq from 'bullmq';
 import 'egg';
+
 declare module 'egg' {
   type EggSchedule = (app: Application) => {
     schedule: {
@@ -16,5 +18,16 @@ declare module 'egg' {
   interface EggAppConfig extends EggAppConfigCustom {}
   interface EggAppConfigCustom {
     _dev_: boolean;
+
+    bullmq: {
+      connection: bullmq.RedisOptions;
+    };
+  }
+
+  interface Application {
+    _bullmq: bullmq;
+    bullmq: {
+      [x: string]: { queue: bullmq.Queue; worker: bullmq.Worker };
+    };
   }
 }
