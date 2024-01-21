@@ -4,7 +4,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 export async function setup(app: Application) {
-  app._bullmq = bullmq;
   app.bullmq = {};
 
   let connection = app.config.bullmq?.connection;

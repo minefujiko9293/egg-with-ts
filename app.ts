@@ -9,9 +9,9 @@ export default class Boot implements IBoot {
   }
 
   async didReady() {
-    // TODO: something...
-
     // setup bullmq
     await setup(this.app);
+
+    // TODO: something...
   }
 }

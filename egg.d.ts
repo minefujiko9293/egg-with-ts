@@ -25,7 +25,6 @@ declare module 'egg' {
   }
 
   interface Application {
-    _bullmq: bullmq;
     bullmq: {
       [x: string]: { queue: bullmq.Queue; worker: bullmq.Worker };
     };
