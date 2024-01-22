@@ -2,7 +2,7 @@ import * as bullmq from 'bullmq';
 import 'egg';
 
 declare module 'egg' {
-  type EggSchedule = (app: Application) => {
+  export type EggSchedule = (app: Application) => {
     schedule: {
       type: 'all' | 'worker';
       interval?: string;
@@ -16,7 +16,7 @@ declare module 'egg' {
   };
 
   interface EggAppConfig extends EggAppConfigCustom {}
-  interface EggAppConfigCustom {
+  export interface EggAppConfigCustom {
     _dev_: boolean;
 
     bullmq: {
