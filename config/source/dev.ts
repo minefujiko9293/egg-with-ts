@@ -11,4 +11,15 @@ export const config: PowerPartial<EggAppConfig> = {
       keyPrefix: 'egg-with-ts',
     },
   },
+
+  bullmq: {
+    agent: true,
+    app: true,
+    redis: {
+      db: 0,
+      port: 6379,
+      host: '127.0.0.1',
+      password: '',
+    },
+  },
 };

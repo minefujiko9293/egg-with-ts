@@ -1,4 +1,3 @@
-import * as bullmq from 'bullmq';
 import 'egg';
 import { Redis } from 'ioredis';
 
@@ -18,19 +17,11 @@ declare module 'egg' {
 
   interface EggAppConfig {
     _dev_: boolean;
-
-    bullmq: {
-      connection: bullmq.RedisOptions;
-    };
-  }
-
-  interface Application {
-    bullmq: {
-      [x: string]: { queue: bullmq.Queue; worker: bullmq.Worker };
-    };
   }
 
   interface Agent {
     redis?: Redis;
   }
+
+  interface Application {}
 }

@@ -1,3 +1,5 @@
+import path from 'path';
+
 export default {
   validate: {
     enable: true,
@@ -10,5 +12,10 @@ export default {
   redis: {
     enable: true,
     package: 'egg-redis',
+  },
+
+  bullmq: {
+    enable: true,
+    path: path.join(__dirname, '../lib/plugin/egg-bullmq'),
   },
 };

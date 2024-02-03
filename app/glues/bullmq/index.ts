@@ -6,7 +6,7 @@ import * as path from 'path';
 export async function setup(app: Application) {
   app.bullmq = {};
 
-  let connection = app.config.bullmq?.connection;
+  let connection = app.config.bullmq?.redis;
   if (!connection) {
     if (app.redis?.options) {
       connection = {
