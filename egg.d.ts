@@ -1,8 +1,9 @@
 import * as bullmq from 'bullmq';
 import 'egg';
+import { Redis } from 'ioredis';
 
 declare module 'egg' {
-  export type EggSchedule = (app: Application) => {
+  type EggSchedule = (app: Application) => {
     schedule: {
       type: 'all' | 'worker';
       interval?: string;
@@ -15,8 +16,7 @@ declare module 'egg' {
     task: (ctx: Context) => Promise<void>;
   };
 
-  interface EggAppConfig extends EggAppConfigCustom {}
-  export interface EggAppConfigCustom {
+  interface EggAppConfig {
     _dev_: boolean;
 
     bullmq: {
@@ -28,5 +28,9 @@ declare module 'egg' {
     bullmq: {
       [x: string]: { queue: bullmq.Queue; worker: bullmq.Worker };
     };
+  }
+
+  interface Agent {
+    redis?: Redis;
   }
 }

@@ -1,4 +1,4 @@
-import { EggAppConfig, EggAppConfigCustom, EggAppInfo, PowerPartial } from 'egg';
+import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 import path from 'path';
 import { config as devSourceConfig } from './source/dev';
 import { config as prodSourceConfig } from './source/prod';
@@ -17,10 +17,12 @@ export default (appInfo: EggAppInfo) => {
     cors: { origin: '*' },
   };
 
-  const custom: PowerPartial<EggAppConfigCustom> = {
-    _dev_: true,
-  };
-  Object.assign(custom, custom._dev_ ?? true ? devSourceConfig : prodSourceConfig);
+  config._dev_ = true;
 
-  return { ...config, ...custom };
+  const source = config._dev_ ?? true ? devSourceConfig : prodSourceConfig;
+
+  return {
+    ...(config as {}),
+    ...(source as {}),
+  };
 };
