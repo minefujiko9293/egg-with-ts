@@ -28,9 +28,10 @@ function _init(app: Application | Agent) {
           connection: redis,
           defaultJobOptions,
         }),
-        worker: new Worker(queue_name, handler, {
-          connection: redis,
-        }),
+        worker:
+          app.type === 'application'
+            ? new Worker(queue_name, handler, { connection: redis })
+            : null,
       };
     },
   });
