@@ -1,4 +1,5 @@
 import { EggAppConfig, PowerPartial } from 'egg';
+import path from 'path';
 
 export const config: PowerPartial<EggAppConfig> = {
   redis: {
@@ -15,6 +16,7 @@ export const config: PowerPartial<EggAppConfig> = {
   bullmq: {
     agent: true,
     app: true,
+    dir: path.join('glues', 'bullmq'),
     redis: {
       db: 0,
       port: 6379,

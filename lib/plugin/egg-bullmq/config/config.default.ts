@@ -6,6 +6,7 @@ export default (appInfo: EggAppInfo) => {
   config.bullmq = {
     app: true,
     agent: false,
+    dir: 'bullmq',
   };
 
   return { ...config };

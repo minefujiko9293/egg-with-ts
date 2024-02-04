@@ -1,5 +1,5 @@
 import { Agent, IBoot } from 'egg';
-import { init } from './lib/install';
+import { setup } from './lib/setup';
 
 export default class Boot implements IBoot {
   app: Agent;
@@ -10,7 +10,7 @@ export default class Boot implements IBoot {
 
   async didLoad() {
     if (this.app.config.bullmq?.agent) {
-      init(this.app);
+      setup(this.app);
     }
   }
 }

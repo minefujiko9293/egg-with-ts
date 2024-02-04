@@ -1,8 +1,10 @@
-import { Queue, RedisOptions, Worker } from 'bullmq';
-import { Application } from 'egg';
+import { Queue, RedisOptions, Worker } from '../../../lib/plugin/egg-bullmq/lib';
 
-export const queue_name = 'sync1';
-export default function register(app: Application, connection: RedisOptions = {}) {
+export default (connection: RedisOptions) => {
+  console.warn('🚀 ~ connection:', connection);
+
+  const queue_name = 'sync';
+
   const queue = new Queue(queue_name, {
     connection,
     defaultJobOptions: {
@@ -21,5 +23,5 @@ export default function register(app: Application, connection: RedisOptions = {}
     { connection },
   );
 
-  return { queue, worker };
-}
+  return { queue_name, queue, worker };
+};

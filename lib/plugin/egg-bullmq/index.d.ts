@@ -1,6 +1,8 @@
 import * as bullmq from 'bullmq';
 import 'egg';
 
+export * from 'bullmq';
+
 declare module 'egg' {
   interface EggAppConfig {
     bullmq: {
@@ -18,6 +20,10 @@ declare module 'egg' {
 
 type using_bullmq = {
   bullmq: {
-    [key: string]: { queue: bullmq.Queue; worker: bullmq.Worker };
+    [key: string]: {
+      queue_name: string;
+      queue: bullmq.Queue;
+      worker: bullmq.Worker;
+    };
   };
 };

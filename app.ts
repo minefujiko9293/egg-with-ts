@@ -1,5 +1,4 @@
 import { Application, IBoot } from 'egg';
-import { setup } from './app/glues/bullmq';
 
 export default class Boot implements IBoot {
   app: Application;
@@ -9,9 +8,6 @@ export default class Boot implements IBoot {
   }
 
   async didReady() {
-    // setup bullmq
-    await setup(this.app);
-
     // TODO: something...
   }
 }
