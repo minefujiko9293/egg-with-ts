@@ -117,9 +117,9 @@ export default class HomeController extends Controller {
   }
 
   public async test5() {
-    // const { queue_name, queue } = this.app.bullmq.async;
-    // console.warn('🚀 ~ HomeController ~ test5 ~ queue_name:', queue_name);
-    // const job = await queue.add(queue_name, { foo: 'bar' });
-    // return job.id;
+    const { queue_name, queue } = this.app.bullmq.sync;
+    console.warn('🚀 ~ HomeController ~ test5 ~ queue_name:', queue_name);
+    const job = await queue.add(queue_name, { foo: 'bar' });
+    return job.id;
   }
 }
