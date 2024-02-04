@@ -1,6 +1,7 @@
 import { Queue, Worker } from 'bullmq';
 import { Agent, Application } from 'egg';
 import path from 'path';
+import { BullmqQueue } from '.';
 
 export function setup(app: Application | Agent) {
   _init(app);
@@ -16,8 +17,8 @@ function _init(app: Application | Agent) {
   // console.log('🚀 ~ inject ~ redis:', redis, dir);
 
   app.loader.loadToApp(_dir, 'bullmq', {
-    initializer(target: any, opt) {
-      console.log('🚀 ~ initializer ~ target:', target, opt);
+    initializer(target: BullmqQueue, opt) {
+      // console.log('🚀 ~ initializer ~ target:', target, opt);
 
       const { queue_name, defaultJobOptions = {}, handler } = target(app);
 

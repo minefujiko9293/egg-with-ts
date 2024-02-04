@@ -2,6 +2,7 @@ import * as bullmq from 'bullmq';
 import 'egg';
 
 export * from 'bullmq';
+export * from './lib/index';
 
 declare module 'egg' {
   interface EggAppConfig {
@@ -13,12 +14,12 @@ declare module 'egg' {
     };
   }
 
-  interface Application extends using_bullmq {}
+  interface Application extends _usingBullmq {}
 
-  interface Agent extends Partial<using_bullmq> {}
+  interface Agent extends Partial<_usingBullmq> {}
 }
 
-type using_bullmq = {
+type _usingBullmq = {
   bullmq: {
     [key: string]: {
       queue_name: string;

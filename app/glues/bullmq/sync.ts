@@ -1,6 +1,6 @@
-import { Application } from 'egg';
+import { BullmqQueue } from '../../../lib/plugin/egg-bullmq';
 
-export default (app: Application) => {
+export default ((app) => {
   return {
     queue_name: 'sync',
     defaultJobOptions: {
@@ -8,11 +8,9 @@ export default (app: Application) => {
       removeOnFail: true,
     },
     handler: async (job) => {
-      console.log('🚀 !!', app.type);
-
-      console.warn('🚀 ~ sync - handler:', job.data);
+      console.warn('🚀 ~ sync - handler:', app.type, job.data);
 
       return;
     },
   };
-};
+}) as BullmqQueue;
