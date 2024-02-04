@@ -8,7 +8,7 @@ export default ((app) => {
       removeOnFail: true,
     },
     handler: async (job) => {
-      console.warn('🚀 ~ sync - handler:', app.type, job.data);
+      console.warn('🚀 ~ sync - handler:', app.type, job.id, job.data);
 
       return;
     },
