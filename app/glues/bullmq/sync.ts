@@ -1,12 +1,18 @@
-export default {
-  queue_name: 'sync',
-  defaultJobOptions: {
-    removeOnComplete: true,
-    removeOnFail: true,
-  },
-  handler: async (job) => {
-    console.warn('🚀 ~ sync - handler:', job.data);
+import { Application } from 'egg';
 
-    return;
-  },
-} as any;
+export default (app: Application) => {
+  return {
+    queue_name: 'sync',
+    defaultJobOptions: {
+      removeOnComplete: true,
+      removeOnFail: true,
+    },
+    handler: async (job) => {
+      console.log('🚀 !!', app.type);
+
+      console.warn('🚀 ~ sync - handler:', job.data);
+
+      return;
+    },
+  };
+};

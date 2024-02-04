@@ -19,7 +19,7 @@ function _init(app: Application | Agent) {
     initializer(target: any, opt) {
       console.log('🚀 ~ initializer ~ target:', target, opt);
 
-      const { queue_name, defaultJobOptions = {}, handler } = target;
+      const { queue_name, defaultJobOptions = {}, handler } = target(app);
 
       return {
         queue_name,
