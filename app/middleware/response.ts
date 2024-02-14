@@ -1,7 +1,7 @@
 import { Context } from 'egg';
 
 export class MyError extends Error {
-  private _my_error_code: number;
+  _my_error_code: number;
   constructor(message: string, _my_error_code = 500) {
     super(message);
     this._my_error_code = _my_error_code;
