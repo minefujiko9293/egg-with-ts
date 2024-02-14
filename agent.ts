@@ -7,7 +7,7 @@ export default class Boot implements IBoot {
     this.app = app;
   }
 
-  async didReady() {
+  async serverDidReady() {
     // TODO: something...
   }
 }
