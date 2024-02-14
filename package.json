@@ -23,7 +23,7 @@
     "egg-cors": "^3.0.0",
     "egg-redis": "^2.5.0",
     "egg-scripts": "^2.17.0",
-    "egg-ts-bullmq": "^1.0.11",
+    "egg-ts-bullmq": "^1.0.12",
     "egg-validate": "^2.0.2",
     "moment": "^2.22.0"
   },
