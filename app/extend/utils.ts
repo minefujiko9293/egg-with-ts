@@ -3,5 +3,5 @@ export function print(data: any) {
 }
 
 export async function testSleep(time = 2) {
-  await new Promise<void>(resolve => setTimeout(() => resolve(), time * 1000));
+  await new Promise<void>((resolve) => setTimeout(() => resolve(), time * 1000));
 }

@@ -5,6 +5,8 @@ export default {
   utils,
 
   getEnv(this: Application) {
-    console.log(this.config.env);
+    const env = this.config.env;
+    console.log(env);
+    return env;
   },
 };
