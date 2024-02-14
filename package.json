@@ -19,12 +19,12 @@
     "stop": "egg-scripts stop --title=egg-with-ts"
   },
   "dependencies": {
-    "@qq877008992/egg-typegoose": "^0.0.1",
-    "egg": "^3.11.0",
+    "@qq877008992/egg-typegoose": "^0.0.2",
+    "egg": "^3.19.0",
     "egg-cors": "^3.0.0",
     "egg-redis": "^2.5.0",
     "egg-scripts": "^2.17.0",
-    "egg-ts-bullmq": "^1.0.12",
+    "egg-ts-bullmq": "^1.0.13",
     "egg-validate": "^2.0.2",
     "lodash": "^4.17.21",
     "moment": "^2.22.0"
@@ -35,8 +35,8 @@
     "@types/lodash": "^4.14.202",
     "@types/mocha": "^10.0.1",
     "cheerio": "^1.0.0-rc.2",
-    "egg-bin": "^5.9.0",
-    "egg-mock": "^5.5.0",
+    "egg-bin": "^6.8.0",
+    "egg-mock": "^5.10.9",
     "eslint": "^8.31.0",
     "eslint-config-egg": "^12.1.0",
     "typescript": "^4.9.4"
