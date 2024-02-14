@@ -1,4 +1,4 @@
-import * as _lodash from 'lodash';
+import _lodash from 'lodash';
 
 export const lodash = _lodash;
 
