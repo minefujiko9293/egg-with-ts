@@ -1,9 +1,13 @@
 {
+  "name": "egg-ts-bullmq",
+  "version": "1.0.0",
   "eggPlugin": {
     "name": "bullmq"
   },
   "dependencies": {
     "bullmq": "^5.1.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "egg": "^3.11.0"
+  }
 }
