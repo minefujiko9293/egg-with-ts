@@ -1,4 +1,4 @@
-import { BullmqQueue } from '../../../lib/plugin/egg-bullmq';
+import { BullmqQueue } from 'egg-ts-bullmq';
 
 export default ((app) => {
   return {
