@@ -1,6 +1,7 @@
 {
   "name": "egg-ts-bullmq",
   "version": "1.0.0",
+  "description": "eggjs using typescript, bullmq plugin",
   "eggPlugin": {
     "name": "bullmq"
   },
