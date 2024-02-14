@@ -1,3 +1,7 @@
+import * as _lodash from 'lodash';
+
+export const lodash = _lodash;
+
 export function print(data: any) {
   console.warn('🚀 ~ print ~ data:', data);
 }
