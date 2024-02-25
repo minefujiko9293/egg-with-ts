@@ -1,4 +1,4 @@
-import { BullmqQueue } from 'egg-ts-bullmq';
+import { BullmqQueue } from '@minefujiko9293/egg-bullmq';
 
 export default ((app) => {
   return {

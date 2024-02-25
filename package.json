@@ -19,12 +19,11 @@
     "stop": "egg-scripts stop --title=egg-with-ts"
   },
   "dependencies": {
-    "@qq877008992/egg-typegoose": "^0.0.2",
+    "@minefujiko9293/egg-bullmq": "^1.0.1",
     "egg": "^3.19.0",
     "egg-cors": "^3.0.0",
     "egg-redis": "^2.5.0",
     "egg-scripts": "^2.17.0",
-    "egg-ts-bullmq": "^1.0.13",
     "egg-validate": "^2.0.2",
     "lodash": "^4.17.21",
     "moment": "^2.22.0"
