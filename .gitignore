@@ -1,19 +1,18 @@
-package-lock.json
-node_modules*/
-npm-debug.log
-
-coverage/
-.idea/
 .vscode
+.idea
 
 .DS_Store
 *.swp
 *.lock
 
+node_modules*/
+npm-debug.log
+package-lock.json
+pnpm-lock.yaml
+
+coverage/
 run/
 logs/
-
-typings
 
 app/**/*.map
 test/**/*.map
@@ -22,3 +21,5 @@ app/**/*.js
 test/**/*.js
 config/**/*.js
 *.js
+
+typings
