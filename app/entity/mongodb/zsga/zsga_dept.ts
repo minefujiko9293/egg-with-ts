@@ -1,4 +1,4 @@
-import { modelOptions, prop } from '@qq877008992/egg-typegoose';
+import { modelOptions, prop } from '@minefujiko9293/egg-typegoose';
 import { _mongo_sync_base } from '../_base';
 
 @modelOptions({ schemaOptions: { collection: 'zsga_dept' } })

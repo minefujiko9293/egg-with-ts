@@ -1,4 +1,4 @@
-import { mongoose } from '@qq877008992/egg-typegoose';
+import { mongoose } from '@minefujiko9293/egg-typegoose';
 import { Controller } from 'egg';
 import { zsga_dept } from '../entity/mongodb/zsga/zsga_dept';
 import { MyError } from '../middleware/response';

@@ -18,6 +18,6 @@ export default {
   },
   typegoose: {
     enable: true,
-    package: '@qq877008992/egg-typegoose',
-  },  
+    package: '@minefujiko9293/egg-typegoose',
+  },
 };
